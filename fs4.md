@@ -13,6 +13,8 @@ In the above image, `Search Event` here is a bundle consisting of the following 
 (ii) url domain
 (iii) keywords:  list of pixel and referrer path/query keywords: [pixel.path, pixel.query, referrer.path, referrer.query]
 
+#### Category Matching
+Currently unsupervised 
 
 
 #### URL Features
