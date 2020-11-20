@@ -1,20 +1,18 @@
-### GDPR Health-Sensitive Searches Classification
+### GDPR Sensitive Searches Classification
 
 
 #### Overview
 
-Aim of this project was to develop a classifier that predicts whether a health-related search is with personal intent, and therefore GDPR sensitive, or not (e.g. education purposes or pet-related).
+Aim of this project was to develop a classifier that predicts whether an x-related search is with personal intent, and therefore GDPR sensitive, or not.
 
-2 main source of features have been used: (i) URL; and (ii) extracted keyphrase. URL gives more context as it contains domain and other peripheral information that can help with identifying whether intent is personal or educational or otherwise. E.g. if the website/domain is a dictionary, this is likely educational. If website is nhs, this is likely personal, even if the keyphrase in both is "adenocarcinoma".
+![feedSource 4 GDPR pipeline](https://raw.githubusercontent.com/captify/notebooks/master/GDPR/files/GDPR_pipeline.png?token=AL5L5INTUD6AYFZOHMPHGE27YE4HY)
 
 
-#### URL Processing Workflow 
+3 main source of features have been used: 
+(i) keyphrase
+(ii) url domain
+(iii) keywords:  list of pixel and referrer path/query keywords: [pixel.path, pixel.query, referrer.path, referrer.query]
 
-- Remove entries without a `urlDomain`
-- Replace empty pixel path, pixel query, referrer path and referrer query with " "
-- Concatenate pixel and referrer path/query (`pathnquery`)
-- Only keep entries with non empty `pathnquery` (len < 0)
-- Clean up the `urlDomain` to only keep the generic top-level domain (i.e. `forums.news.cnn.com`--> cnn)
 
 
 #### URL Features
