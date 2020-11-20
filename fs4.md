@@ -8,7 +8,7 @@ Aim of this project was to develop a classifier that predicts whether an x-relat
 ![feedSource 4 GDPR pipeline](https://raw.githubusercontent.com/captify/notebooks/master/GDPR/files/GDPR_pipeline.png?token=AL5L5INTUD6AYFZOHMPHGE27YE4HY)
 
 
-3 main source of features have been used: 
+In the above image, `Search Event` here is a bundle consisting of the following search fields: 
 (i) keyphrase
 (ii) url domain
 (iii) keywords:  list of pixel and referrer path/query keywords: [pixel.path, pixel.query, referrer.path, referrer.query]
