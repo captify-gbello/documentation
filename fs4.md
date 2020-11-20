@@ -20,7 +20,10 @@ Currently unsupervised, similar to approach used in user profiles, taxonomy clas
 - If mean cosine similarity exceeds a preset similarity threshold, then the keyphrase is assigned as GDPR category c.
 
 ##### Seed words
-These are available here 
+These are available here: s3://captify-semantics/personal/gbello/GDPR/SeedWords/words_and_embeddings/en/GDPR_SeedWords_embeddings_CENTROIDS_ftCrawl300d2M.csv
+Here is a small sample of seed words for each GDPR category:
+
+![short samples of seed words from each GDPR category](https://raw.githubusercontent.com/captify/notebooks/master/GDPR/files/GDPR_SeedWords.png?token=AL5L5IK5VQNXR6N2MQTEHHC7YE554)
 
 
 #### URL Features
