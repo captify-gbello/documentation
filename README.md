@@ -19,7 +19,7 @@ Meant to be applied to searches in the keyword feed meeting the following criter
 - detectedLanguage is in [en, de, fr, it, es]
 
 ### Pipeline
-this pipeline would take a keyphrase and its detected language as input, and based on detected language, it will classify the keyphrase using the appropriate model for that language.
+this pipeline takes a keyphrase and its detected language as input, and based on detected language, it will classify the keyphrase using the appropriate model for that language.
 
 
 ### General approach
@@ -32,22 +32,15 @@ Data was from translated data.  For each language, training was carried out on a
 ### Project location on Captify's codebase
 Located here: https://github.com/captify/poly/tree/master/sem/gdpr-model-server
 
-## Model
+## Models
+SVM models, one for each language. Located on MLFlow prod.
+
 ### Features
 
 fastText embeddings of keyphrases. Averaged over the words in the keyphrase. Find embedding models under s3://captify-semantics/personal/gbello/models/. The fastText embeddings are pre-trained on Common Crawl
 
-- [indirectly represented] word2vec ([`wiki_en.bin`](https://fasttext.cc/docs/en/pretrained-vectors.html)) cosine similarity between clean generic top-level domain (see below) and tier 2 taxonomy names 
-- [indirectly represented] word2vec (`wiki_en.bin`) cosine similarity between `pathnquery` (concatenation of keyword feed pixel path, pixel query, referrer path, referrer query) and tier 2 taxonomy names
-- [indirectly represented] word2vec embedding (`wiki_en.bin`) of clean generic top-level domain
-- URL tier 1 taxonomy category probability (from SEM-69; probability prediction is generated using the 3 features above)
-
-### Prediction
-At the current time, prediction is carried out by SVM models trained 
-
-
 ### Keyphrase Processing Workflow
 
 - Lower case string
-- Replace some word-delimiting symbols with whitespace (`re.sub(r"\+|-|_", " ", _)`)
+- Replace word-delimiting symbols (`+` and `-`) with whitespace
 - Tokenize string by `" "`
