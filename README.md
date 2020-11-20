@@ -16,10 +16,17 @@ This was implemented as gRPC service, with server side written in python. This s
 Meant to be applied to searches in the keyword feed meeting the following criteria:
 - feedSource == 5
 - country is in `EU_countries` (see list [here](https://github.com/captify/migrations/blob/develop/migrations/src/main/resources/migrations/c3/312_1__fix_bug_add_gdpr_flag_to_sel_country.sql))
-- detectedLanguage is in ['en','de','fr','it','es']
+- detectedLanguage is in [en, de, fr, it, es]
+
+### Pipeline
+this pipeline would take a keyphrase and its detected language as input, and based on detected language, it will classify the keyphrase using the appropriate model for that language.
+
 
 ### General approach
-General approach is a language-specific approach, where there is a separate model for each language.
+General approach is a language-specific approach, where there is a separate model for each language. Take a look at [SEM-844](https://jira.captifymedia.com/browse/SEM-844) and [SEM-862](https://jira.captifymedia.com/browse/SEM-862).
+
+#### Model training
+Data was from translated data.  For each language, training was carried out on auto-translated version of the English dataset (to the language of interest), and validation was carried out on manually annotated datasets created for the language of interest.
 
 
 ### Project location on Captify's codebase
