@@ -14,7 +14,13 @@ In the above image, `Search Event` here is a bundle consisting of the following 
 (iii) keywords:  list of pixel and referrer path/query keywords: [pixel.path, pixel.query, referrer.path, referrer.query]
 
 #### Category Matching
-Currently unsupervised 
+Currently unsupervised, similar to approach used in user profiles, taxonomy classifier. To check if keyphrase belongs to GDPR category c :
+- Use seed words specific for c
+- Mean cosine similarity of words/tokens in keyphrase to seed word cluster centroid for c
+- If mean cosine similarity exceeds a preset similarity threshold, then the keyphrase is assigned as GDPR category c.
+
+##### Seed words
+These are available here 
 
 
 #### URL Features
