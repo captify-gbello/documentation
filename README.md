@@ -33,11 +33,21 @@ Data was from translated data.  For each language, training was carried out on a
 Located here: https://github.com/captify/poly/tree/master/sem/gdpr-model-server
 
 ## Models
-SVM models, one for each language. Located on MLFlow prod.
+SVM models, one for each language. Located on MLFlow prod. There is a separate model for each language:
+- EN: `GDPR_feedsource5_fastText_classifier_EN`
+- FR: `GDPR_feedsource5_fastText_classifier_FR`
+- DE: `GDPR_feedsource5_fastText_classifier_DE`
+- IT: `GDPR_feedsource5_fastText_classifier_IT`
+- ES: `GDPR_feedsource5_fastText_classifier_ES`
 
 ### Features
 
-fastText embeddings of keyphrases. Averaged over the words in the keyphrase. Find embedding models under s3://captify-semantics/personal/gbello/models/. The fastText embeddings are pre-trained on Common Crawl
+All the models use the same kind of feature: fastText embeddings of the keyphrases (mean word embedding vectors over the words in the keyphrase). Each language uses pre-trained fastText embedding models trained for that language using common crawl data. Find embedding models under s3://captify-semantics/personal/gbello/models/. Under this location, the embedding filenames are:
+- EN: `crawl-300d-2M.vec.bin`
+- FR: `cc.fr.300.vec.bin`
+- DE: `cc.de.300.vec.bin`
+- IT: `cc.it.300.vec.bin`
+- ES: `cc.es.300.vec.bin`
 
 ### Keyphrase Processing Workflow
 
