@@ -37,26 +37,19 @@ Therefore, Stage II of the pipeline tries to make distinction between searches o
 - “_will pregnancy affect my diabetes?_” (![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) sensitive!)
 - “_statistics on dementia in uk_” (![#c5f015](https://via.placeholder.com/15/c5f015/000000?text=+) not sensitive)
 
-
-For a keyphrase designated as related to some GDPR category, the Stage II model predict if it is of a ‘personal’ nature or not. 
-Needs to also be of a ‘personal’ nature
-‘personal’: will search {keyphrase + url} allow me to infer (with reasonable certainty) the religion/ health status/sex life or orientation/ethnicity/political affiliation of the searcher?*
-
-For example, if Stage I matches a keyphrase as related to religion, it is fed to a religion-specific binary classifier that determines if the search is of a personal nature or not. 
-There is a separate such classifier for each GDPR category. At the moment, all of these are SVM classifiers. For these classifiers, all features are generated from only 2 search attributes: keyphrase and url
+So in Stage II, for each GDPR category, there is a separate model trained to distinguish personal from non-personal searches within each category. At the moment, all of these are SVM classifiers. For these classifiers, all features are generated from only 2 search attributes: keyphrase and url
 - Keyphrase-based features:
   - Keyphrase embeddings: embeddings for keyphrase text
 - URL-based features:
   - Embeddings of URL domain
   - Embeddings of URL and referrer path and query keywords
   
-  
-
-#### Keyphrase Processing Workflow
-
-- Lower case string
-- Replace some word-delimiting symbols with whitespace (`re.sub(r"\+|-|_", " ", _)`)
-- Tokenize string by `" "`
+The models are all in MLFlow prod. Here are the model names:
+- Race/Ethnicity: `GDPR_feedsource4_en_ethnicity_classifier`
+- Health: `GDPR_feedsource4_en_health_classifier`
+- Politics/Trade Union: `GDPR_feedsource4_en_politics_classifier`
+- Religion: `GDPR_feedsource4_en_religion_classifier`
+- Sex life/orientation: `GDPR_feedsource4_en_sexlife_classifier`
 
 
 
