@@ -73,5 +73,5 @@ The models are all in MLFlow prod. Here are the model names:
 
 
 ### Project location on Captify's codebase
-Located here: https://github.com/captify/poly/tree/master/sem/gdpr-model-server
+Located here: https://github.com/captify/poly/tree/master/sem/gdpr-model-server/
 
