@@ -13,6 +13,13 @@ In the above image, `Search Event` here is a bundle consisting of the following 
 - url domain
 - keywords:  list of pixel and referrer path/query keywords: [pixel.path, pixel.query, referrer.path, referrer.query]
 
+### Scope of deployment
+Meant to be applied to searches in the keyword feed meeting the following criteria:
+- feedSource == 4
+- country is in EU_countries (see list here)
+- detectedLanguage is English
+
+Below we go into details about **Stage I** and **Stage II** in the pipeline.
 
 ### Stage I: Category Matching
 Currently unsupervised, similar to approach used in user profiles, taxonomy classifier. To check if keyphrase belongs to GDPR category `c` :
@@ -52,4 +59,6 @@ The models are all in MLFlow prod. Here are the model names:
 - Sex life/orientation: `GDPR_feedsource4_en_sexlife_classifier`
 
 
+### Project location on Captify's codebase
+Located here: https://github.com/captify/poly/tree/master/sem/gdpr-model-server
 
