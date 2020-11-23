@@ -65,11 +65,6 @@ So in Stage II, for each GDPR category, there is a separate model trained to dis
   - Embeddings of URL and referrer path and query keywords
   
 The models are all in MLFlow prod. Here are the model names:
-- Race/Ethnicity: `GDPR_feedsource4_en_ethnicity_classifier`
-- Health: `GDPR_feedsource4_en_health_classifier`
-- Politics/Trade Union: `GDPR_feedsource4_en_politics_classifier`
-- Religion: `GDPR_feedsource4_en_religion_classifier`
-- Sex life/orientation: `GDPR_feedsource4_en_sexlife_classifier`
 
 | GDPR Category |   Model name  |
 | ------------- | ------------- |
