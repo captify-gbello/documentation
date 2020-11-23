@@ -16,7 +16,7 @@ So in our keyword feed data that we get from various publishers, we want to remo
 1. related to any one of the 5 categories above, and
 2. of a ‘personal’ nature (more details on this in section [Stage II: GDPR sensitivity prediction](#stage-ii-gdpr-sensitivity-prediction) )
 
-The diagram below summarises the pipeline as it is currently:
+To be able to detect such searches, we use an ML approach. The diagram below summarises the pipeline as it is currently:
 
 ![feedSource 4 GDPR pipeline](https://raw.githubusercontent.com/captify/notebooks/master/GDPR/files/GDPR_pipeline.png?token=AL5L5INTUD6AYFZOHMPHGE27YE4HY)
 
