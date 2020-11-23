@@ -1,9 +1,22 @@
-# GDPR Sensitive Searches Classification
+# GDPR Classification for feedSource 4 searches
 
 
-## Overview
+## Background
 
-Aim of this project was to develop a classifier that predicts whether an x-related search is with personal intent, and therefore GDPR sensitive, or not.
+GDPR regulations bar us from using [sensitive search data](https://ico.org.uk/for-organisations/guide-to-data-protection/guide-to-the-general-data-protection-regulation-gdpr/special-category-data/what-is-special-category-data/). At Captify, the main categories of sensitive data we are concerned with are:
+- personal data revealing **racial or ethnic origin**
+- data concerning one's **health** 
+- personal data revealing **political opinions** and **trade union membership**
+- personal data revealing **religious/philosophical beliefs**
+- data concerning a person’s **sex life** or **sexual orientation**
+
+We are not permitted to process (including collection or storage) personal searches that fall into these special categories without a proper legal basis, which for these categories is usually explicit consent - however in most cases we will not be able to get explicit consent.
+
+So in our keyword feed data that we get from various publishers, we want to remove any searches that is:
+1. related to any one of the 5 categories above, and
+2. of a ‘personal’ nature (more details on this in section [**Stage II: GDPR sensitivity prediction**](#Stage II: GDPR sensitivity prediction) )
+
+The diagram below summarises the pipeline as it is currently:
 
 ![feedSource 4 GDPR pipeline](https://raw.githubusercontent.com/captify/notebooks/master/GDPR/files/GDPR_pipeline.png?token=AL5L5INTUD6AYFZOHMPHGE27YE4HY)
 
