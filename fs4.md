@@ -14,7 +14,7 @@ We are not permitted to process (including collection or storage) personal searc
 
 So in our keyword feed data that we get from various publishers, we want to remove any searches that is:
 1. related to any one of the 5 categories above, and
-2. of a ‘personal’ nature (more details on this in section [**Stage II: GDPR sensitivity prediction**](#Stage II: GDPR sensitivity prediction) )
+2. of a ‘personal’ nature (more details on this in section [Stage II: GDPR sensitivity prediction](#stage-ii-gdpr-sensitivity-prediction) )
 
 The diagram below summarises the pipeline as it is currently:
 
