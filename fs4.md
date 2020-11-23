@@ -71,6 +71,14 @@ The models are all in MLFlow prod. Here are the model names:
 - Religion: `GDPR_feedsource4_en_religion_classifier`
 - Sex life/orientation: `GDPR_feedsource4_en_sexlife_classifier`
 
+| GDPR Category |   Model name  |
+| ------------- | ------------- |
+| Race/Ethnicity  | `GDPR_feedsource4_en_ethnicity_classifier`  |
+| Health  | `GDPR_feedsource4_en_health_classifier`  |
+| Politics/Trade Union  | `GDPR_feedsource4_en_politics_classifier`  |
+| Religion  | `GDPR_feedsource4_en_religion_classifier`  |
+| Sex life/orientation  | `GDPR_feedsource4_en_sexlife_classifier`  |
+
 
 ### Project location on Captify's codebase
 Located here: https://github.com/captify/poly/tree/master/sem/gdpr-model-server/
